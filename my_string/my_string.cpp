@@ -1,4 +1,5 @@
 #include<iostream>
+#include<initializer_list>
 #include"my_string.h"
 #include"func.h"
 using namespace std;
@@ -11,6 +12,14 @@ Mystring::Mystring(const char* str) {
 	int len = capacity(tmp); // получили длину строки
 	this->str = mem_allocate(len);// выделили под новую строку память
 	copy_str(len, this->str, tmp); // копируем содержимое конст строки в выделенную память
+}
+Mystring::Mystring(initializer_list<char> str) {
+	//const char* begin = str.begin();
+	char* end = (char*)str.end();
+	*end = NULL; // add a \0 symbol
+	char* str_buffer = (char*)str.begin();// преобразовали вводимую строку в нормальный char
+	this->str = mem_allocate(capacity(str_buffer));// allocate a new memore for this->str;
+	copy_str(capacity(str_buffer), this->str, str_buffer);
 }
 
 
