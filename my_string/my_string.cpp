@@ -14,12 +14,20 @@ Mystring::Mystring(const char* str) {
 	copy_str(len, this->str, tmp); // копируем содержимое конст строки в выделенную память
 }
 Mystring::Mystring(initializer_list<char> str) {
-	//const char* begin = str.begin();
 	char* end = (char*)str.end();
 	*end = NULL; // add a \0 symbol
 	char* str_buffer = (char*)str.begin();// преобразовали вводимую строку в нормальный char
 	this->str = mem_allocate(capacity(str_buffer));// allocate a new memore for this->str;
 	copy_str(capacity(str_buffer), this->str, str_buffer);
+}
+Mystring::Mystring(string str) {
+	char* tmp = &str[0];
+	int len = 0;
+	while (str[len] != NULL) 
+		len++;
+	len++;
+	this->str = mem_allocate(len);
+	copy_str(len, this->str, tmp);
 }
 
 
