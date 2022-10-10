@@ -41,6 +41,16 @@ Mystring::Mystring(int len, char s) {//Mystring a5(5, '!');
 		*(this->str + i) = s;
 	*(this->str + len) = 0;
 }
+Mystring::Mystring(Mystring& s) {
+	char* tmp = s.get_str(); // получаю указаетель на строку из другого объекта
+	int len = s.capacity();
+	this->str = mem_allocate(len);
+	copy_str(len, this->str, tmp);
+}
+Mystring::~Mystring() {
+	delete[] this->str;
+	this->str = nullptr;
+}
 
 
 // в этом методе получаем длину строки

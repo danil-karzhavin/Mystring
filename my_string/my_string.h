@@ -11,6 +11,8 @@ public:
 	Mystring(string str);
 	Mystring(const char*, int);
 	Mystring(int, char);
+	Mystring(Mystring&);
+	~Mystring();
 
 	int size();
 	int size(char*); // get a length of array

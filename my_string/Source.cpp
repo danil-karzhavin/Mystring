@@ -4,9 +4,10 @@
 using namespace std;
 
 int main() {
-	Mystring a5(10, 'u');
-	cout << a5.get_str() << endl;
-	cout << a5.size() << endl;
-	cout << a5.capacity() << endl;
+	Mystring a7("helhiigugihlo");
+	std::cout << a7.get_str() << " " << a7.size() << " " << a7.capacity() << std::endl;
+	Mystring a8(a7);
+	std::cout << a8.get_str() << " " << a8.size() << " " << a8.capacity() << std::endl;
+
 	return 0;
 }
