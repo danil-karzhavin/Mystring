@@ -29,6 +29,12 @@ Mystring::Mystring(string str) {
 	this->str = mem_allocate(len);
 	copy_str(len, this->str, tmp);
 }
+Mystring::Mystring(const char* str, int len) {
+	char* tmp = (char*)str;
+	this->str = mem_allocate(len + 1);
+	copy_str(len, this->str, tmp);
+	*(this->str + len) = 0;
+}
 
 
 // в этом методе получаем длину строки

@@ -9,6 +9,7 @@ public:
 	Mystring(const char* str);
 	Mystring(initializer_list<char> str);
 	Mystring(string str);
+	Mystring(const char*, int);
 
 	int size();
 	int size(char*); // get a length of array

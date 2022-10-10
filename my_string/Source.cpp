@@ -4,9 +4,9 @@
 using namespace std;
 
 int main() {
-	string s = "hello hello hello hello";
-	Mystring str(s);
-	cout << str.get_str() << " " << str.size() << " " << str.capacity() << endl;
-	
+	Mystring a5("hello", 4);
+	cout << a5.get_str() << endl;
+	cout << a5.size() << endl;
+	cout << a5.capacity() << endl;
 	return 0;
 }
