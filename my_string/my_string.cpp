@@ -35,6 +35,12 @@ Mystring::Mystring(const char* str, int len) {
 	copy_str(len, this->str, tmp);
 	*(this->str + len) = 0;
 }
+Mystring::Mystring(int len, char s) {//Mystring a5(5, '!');
+	this->str = mem_allocate(len + 1);
+	for (int i = 0; i < len; i++)
+		*(this->str + i) = s;
+	*(this->str + len) = 0;
+}
 
 
 // в этом методе получаем длину строки

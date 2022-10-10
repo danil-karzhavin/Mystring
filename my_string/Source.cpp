@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-	Mystring a5("hello", 4);
+	Mystring a5(10, 'u');
 	cout << a5.get_str() << endl;
 	cout << a5.size() << endl;
 	cout << a5.capacity() << endl;
