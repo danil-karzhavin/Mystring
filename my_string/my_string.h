@@ -1,18 +1,19 @@
 #ifndef MY_STRING
 #define MY_STRING
 using namespace std;
-class Mystring {
+class MyString {
 private:
 	char* str = nullptr;
 public:
-	Mystring();
-	Mystring(const char* str);
-	Mystring(initializer_list<char> str);
-	Mystring(string str);
-	Mystring(const char*, int);
-	Mystring(int, char);
-	Mystring(Mystring&);
-	~Mystring();
+	MyString();
+	MyString(const char* str);
+	MyString(initializer_list<char> str);
+	MyString(string str);
+	MyString(const char*, int);
+	MyString(int, char);
+	MyString(MyString&);
+	MyString(char*);
+	~MyString();
 
 	int size();
 	int size(char*); // get a length of array
@@ -21,6 +22,11 @@ public:
 	int capacity(char*);// get a length of array (+  "/0")
 
 	char* mem_allocate(int);
+	char* mem_reallocate(int, char*); // перевыдел€ем пам€ть под сущ. строку на другой размер
 	char* get_str();
+
+	MyString operator + (MyString&);
+	void operator = (MyString&);
+	void operator += (MyString&);
 };
 #endif
