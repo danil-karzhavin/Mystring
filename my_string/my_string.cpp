@@ -107,7 +107,6 @@ char* MyString::mem_reallocate(int new_len, char* str) {
 	return tmp;
 }
 
-
 MyString MyString::operator + (MyString& s2) {
 	int len1 = size();
 	int len2 = s2.size();
@@ -159,4 +158,18 @@ void MyString::operator +=(string& str2) {
 	for (int i = len1, j = 0; i < this->size(); i++, j++) {
 		*(this->str + i) = *(s2.get_str() + j);
 	}
+}
+char MyString::operator[] (int i) {
+	return this->str[i];
+}
+bool MyString::operator> (MyString& str2) {
+	int len1 = this->size();
+	int len2 = str2.size();
+	bool tmp;
+	int len = (len1 >= len2) ? len2 : len1;
+	for (int i = 0; i < len; i++) {
+		tmp = (this->str[i] > str2.get_str()[i]) ? true : false;
+		break;
+	}
+	return tmp;
 }

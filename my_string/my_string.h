@@ -32,5 +32,12 @@ public:
 	void operator = (char);
 	void operator += (MyString&);
 	void operator += (string&);
+	char operator [] (int);
+	bool operator > (MyString&);
+	bool operator < (MyString&);
+	bool operator >= (MyString&);
+	bool operator <= (MyString&);
+	bool operator == (MyString&);
+	bool operator != (MyString&);
 };
 #endif

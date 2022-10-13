@@ -4,11 +4,8 @@
 using namespace std;
 
 int main() {
-	MyString a3;
-	a3 = '!';
-	std::cout << a3.get_str() << std::endl;
-	std::cout << a3.size() << std::endl;
-	std::cout << a3.capacity() << std::endl;
+	MyString a1("abc"), a2("b");
+	cout << (a2 > a1) << endl;
 
 	return 0;
 }
