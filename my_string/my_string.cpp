@@ -107,6 +107,7 @@ char* MyString::mem_reallocate(int new_len, char* str) {
 	return tmp;
 }
 
+
 MyString MyString::operator + (MyString& s2) {
 	int len1 = size();
 	int len2 = s2.size();
@@ -120,6 +121,24 @@ void MyString::operator=(MyString& s2)
 	if (this->str != nullptr) {
 		delete[] str;
 	}
+	int size_2 = s2.capacity();
+	this->str = mem_allocate(size_2);
+	copy_str(size_2, this->str, s2.get_str());
+}
+void MyString::operator = (const char* str) {
+	MyString s2(str);
+	int size_2 = s2.capacity();
+	this->str = mem_allocate(size_2);
+	copy_str(size_2, this->str, s2.get_str());
+}
+void MyString::operator = (string str) {
+	MyString s2(str);
+	int size_2 = s2.capacity();
+	this->str = mem_allocate(size_2);
+	copy_str(size_2, this->str, s2.get_str());
+}
+void MyString::operator= (char s) {
+	MyString s2(1, s);
 	int size_2 = s2.capacity();
 	this->str = mem_allocate(size_2);
 	copy_str(size_2, this->str, s2.get_str());

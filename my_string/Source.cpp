@@ -4,11 +4,11 @@
 using namespace std;
 
 int main() {
-	MyString a3("I like ");
-	std::string s1 = "Test 3";
-	a3 += s1;
+	MyString a3;
+	a3 = '!';
 	std::cout << a3.get_str() << std::endl;
-	cout << s1 << endl;
+	std::cout << a3.size() << std::endl;
+	std::cout << a3.capacity() << std::endl;
 
 	return 0;
 }

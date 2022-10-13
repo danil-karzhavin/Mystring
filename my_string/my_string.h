@@ -27,6 +27,9 @@ public:
 
 	MyString operator + (MyString&);
 	void operator = (MyString&);
+	void operator = (const char*);
+	void operator = (string);
+	void operator = (char);
 	void operator += (MyString&);
 	void operator += (string&);
 };
