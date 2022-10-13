@@ -4,9 +4,11 @@
 using namespace std;
 
 int main() {
-	MyString a1("hello hello "), a2("lo");
-	a1 += a2;
-	std::cout << a1.get_str() << " " << a2.get_str() << std::endl;
+	MyString a3("I like ");
+	std::string s1 = "Test 3";
+	a3 += s1;
+	std::cout << a3.get_str() << std::endl;
+	cout << s1 << endl;
 
 	return 0;
 }

@@ -28,5 +28,6 @@ public:
 	MyString operator + (MyString&);
 	void operator = (MyString&);
 	void operator += (MyString&);
+	void operator += (string&);
 };
 #endif

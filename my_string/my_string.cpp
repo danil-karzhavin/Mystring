@@ -132,3 +132,12 @@ void MyString::operator +=(MyString& s2) {
 		*(this->str + i) = *(s2.get_str() + j);
 	}
 }
+void MyString::operator +=(string& str2) {
+	MyString s2(str2);
+	int len1 = this->size(); // старая длина строки
+	int new_len = this->size() + s2.size() + 1;
+	this->str = mem_reallocate(new_len, this->str);// перевыделили память на длину new_len, скопировали туда содержимое this->str, затем очистили this->str.
+	for (int i = len1, j = 0; i < this->size(); i++, j++) {
+		*(this->str + i) = *(s2.get_str() + j);
+	}
+}
