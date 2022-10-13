@@ -173,3 +173,68 @@ bool MyString::operator> (MyString& str2) {
 	}
 	return tmp;
 }
+bool MyString::operator>= (MyString& str2) {
+	int len1 = this->size();
+	int len2 = str2.size();
+	bool tmp;
+	int len = (len1 >= len2) ? len2 : len1;
+	for (int i = 0; i < len; i++) {
+		if (this->str[i] != str2.get_str()[i]) {
+			tmp = (this->str[i] >= str2.get_str()[i]) ? true : false;
+			break;
+		}
+	}
+	return tmp;
+}
+bool MyString::operator< (MyString& str2) {
+	int len1 = this->size();
+	int len2 = str2.size();
+	bool tmp;
+	int len = (len1 >= len2) ? len2 : len1;
+	for (int i = 0; i < len; i++) {
+		tmp = (this->str[i] < str2.get_str()[i]) ? true : false;
+		break;
+	}
+	return tmp;
+}
+bool MyString::operator<= (MyString& str2) {
+	int len1 = this->size();
+	int len2 = str2.size();
+	bool tmp;
+	int len = (len1 >= len2) ? len2 : len1;
+	for (int i = 0; i < len; i++) {
+		if (this->str[i] != str2.get_str()[i]) {
+			tmp = (this->str[i] <= str2.get_str()[i]) ? true : false;
+			break;
+		}
+	}
+	return tmp;
+}
+bool MyString::operator == (MyString& str2) {
+	int len1 = this->size();
+	int len2 = str2.size();
+	bool tmp;
+	int len = (len1 >= len2) ? len2 : len1;
+	for (int i = 0; i < len; i++) {
+		if (this->str[i] != str2.get_str()[i]) {
+			return false;
+		}
+	}
+	if (len1 == len2)
+		return true;
+	else return false;
+}
+bool MyString::operator != (MyString& str2) {
+	int len1 = this->size();
+	int len2 = str2.size();
+	bool tmp;
+	int len = (len1 >= len2) ? len2 : len1;
+	for (int i = 0; i < len; i++) {
+		if (this->str[i] != str2.get_str()[i]) {
+			return true;
+		}
+	}
+	if (len1 != len2)
+		return true;
+	else return false;
+}

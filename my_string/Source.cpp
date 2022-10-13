@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-	MyString a1("abc"), a2("b");
-	cout << (a2 > a1) << endl;
+	MyString a1("abc"), a2("abc  ");
+	cout << (a2 != a1) << endl;
 
 	return 0;
 }
