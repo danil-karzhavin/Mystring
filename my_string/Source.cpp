@@ -4,8 +4,10 @@
 using namespace std;
 
 int main() {
-	MyString a1("abc"), a2("abc  ");
-	cout << (a2 != a1) << endl;
+	MyString a1("Hello world!");
+	std::string s1;
+	s1 = a1.data();
+	std::cout << s1 << std::endl;
 
 	return 0;
 }

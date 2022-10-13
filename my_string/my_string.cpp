@@ -238,3 +238,10 @@ bool MyString::operator != (MyString& str2) {
 		return true;
 	else return false;
 }
+char* MyString::c_str() {
+	return this->str;
+}
+string MyString::data() {
+	string tmp = (string)this->str;
+	return tmp;
+}

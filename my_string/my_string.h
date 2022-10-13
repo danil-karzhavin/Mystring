@@ -39,5 +39,8 @@ public:
 	bool operator <= (MyString&);
 	bool operator == (MyString&);
 	bool operator != (MyString&);
+
+	char* c_str();
+	string data();
 };
 #endif
